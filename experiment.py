@@ -175,4 +175,11 @@ def phi_search(start, end, model, original, noise, epsilon):
 	else:
 		max_phi = phi_search(start, mid, model, original, noise, epsilon)
 	return max_phi
+
+###Example usage
+orignal_obs = randomize_state(env, 100)
+generator = cv2.blur(np.squeeze(obs),(199,19))
+noise = generator - np.squeeze(obs)
+phi = phi_search(0.0,1.0,model,original_obs,noise,0.001)
+print(phi)
 """
